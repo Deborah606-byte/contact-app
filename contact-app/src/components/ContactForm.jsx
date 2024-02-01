@@ -9,16 +9,6 @@ const InputField = ({
   placeholder,
   required,
 }) => {
-  const inputProps = {
-    id: name,
-    name: name,
-    className: "w-full p-2 border border-gray-300 rounded",
-    placeholder: placeholder,
-    value: value,
-    onChange: onChange,
-    required: required,
-  };
-
   return (
     <div className="mb-4">
       <label
@@ -28,9 +18,24 @@ const InputField = ({
         {label}
       </label>
       {type === "textarea" ? (
-        <textarea {...inputProps} />
+        <textarea
+          className="w-full p-2 border border-gray-300 rounded"
+          name={name}
+          value={value}
+          onChange={onChange}
+          placeholder={placeholder}
+          required={required}
+        />
       ) : (
-        <input type={type} {...inputProps} />
+        <input
+          type={type}
+          className="w-full p-2 border border-gray-300 rounded"
+          name={name}
+          value={value}
+          onChange={onChange}
+          placeholder={placeholder}
+          required={required}
+        />
       )}
     </div>
   );
@@ -113,7 +118,7 @@ const ContactForm = () => {
       </div>
       <button
         type="submit"
-        className="bg-black text-white py-2 px-4 rounded-full hover:bg-blue-600 mt-4 block mx-auto"
+        className="w-full bg-black text-white py-2 px-4 rounded-full hover:bg-blue-600 mt-4 block mx-auto"
       >
         Submit
       </button>

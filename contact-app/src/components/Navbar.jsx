@@ -9,7 +9,8 @@ const Modal = ({ isOpen, onClose, children }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">
       <div className="bg-white p-8 rounded-md w-96 relative">
-        <div className="absolute top-0 right-0 mt-1 mr-1 cursor-pointer">
+        <h1>Contact form</h1>
+        <div className="absolute top-0 right-0 mt-5 mr-5 cursor-pointer">
           <FontAwesomeIcon icon={faTimes} onClick={onClose} />
         </div>
         {children}
